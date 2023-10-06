@@ -18,6 +18,21 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/about', function () {
+    return "About Page!!!";
+});
+
+Route::get('/item/{id}', function ($id) {
+    $message = "商品IDは{$id}";
+    return $message;
+});
+
+//Amazonの商品のようなルーティング
+Route::get('/dp/{id}', function ($id) {
+    $message = "商品IDは{$id}";
+    return $message;
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
