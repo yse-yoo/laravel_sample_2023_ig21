@@ -34,6 +34,12 @@ Route::get('/dp/{id}', function ($id) {
     return $message;
 });
 
+// URLから直接アクセスできない
+Route::post('/hello', function () {
+    $message = "こんにちは";
+    return $message;
+});
+
 //Google検索みたいなルーティング
 Route::get('/search', function (Request $request) {
     //dd($request);
