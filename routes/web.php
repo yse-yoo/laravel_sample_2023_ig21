@@ -36,7 +36,9 @@ Route::get('/dp/{id}', function ($id) {
 
 //Google検索みたいなルーティング
 Route::get('/search', function (Request $request) {
-    dd($request);
+    //dd($request);
+    $keyword = $request->q;
+    return $keyword;
 });
 
 
