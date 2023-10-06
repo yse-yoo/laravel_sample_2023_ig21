@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,6 +33,12 @@ Route::get('/dp/{id}', function ($id) {
     $message = "商品IDは{$id}";
     return $message;
 });
+
+//Google検索みたいなルーティング
+Route::get('/search', function (Request $request) {
+    dd($request);
+});
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
