@@ -38,7 +38,8 @@ Route::get('/dp/{id}', function ($id) {
 Route::get('/search', function (Request $request) {
     //dd($request);
     $keyword = $request->q;
-    return $keyword;
+    $message = "キーワードは{$keyword}です";
+    return $message;
 });
 
 
