@@ -43,7 +43,8 @@ class ItemController extends Controller
             2 => '紅茶',
             3 => 'ほうじ茶',
         ];
-        if ($id > 0) $item = $items[$id];
+        $item = "";
+        if ($id > 0 && in_array($id, $items)) $item = $items[$id];
         // ビューに受け渡すデータ生成
         $data = ['item' => $item];
 
