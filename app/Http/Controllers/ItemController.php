@@ -44,7 +44,9 @@ class ItemController extends Controller
             3 => 'ほうじ茶',
         ];
         $item = "";
-        if ($id > 0 && in_array($id, array_keys($items))) $item = $items[$id];
+        if ($id > 0 && in_array($id, array_keys($items))) {
+            $item = $items[$id];
+        }
         // ビューに受け渡すデータ生成
         $data = ['item' => $item];
 
