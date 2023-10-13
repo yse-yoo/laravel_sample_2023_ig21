@@ -44,9 +44,15 @@ Route::post('/hello', function () {
 //Google検索みたいなルーティング
 Route::get('/search', function (Request $request) {
     //dd($request);
-    $keyword = $request->q;
-    $message = "キーワードは{$keyword}です";
-    return $message;
+    // $keyword = $request->q;
+    // $message = "キーワードは{$keyword}です";
+
+    //連想配列データ
+    $data = [
+        'keyword' => $request->q
+    ];
+    // Viewファイルにデータを渡す
+    return view('search', $data);
 });
 
 
