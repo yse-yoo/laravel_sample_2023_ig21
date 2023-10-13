@@ -16,11 +16,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    // resources/views/welcome.blade.php ビューが表示
     return view('welcome');
 });
 
 Route::get('/about', function () {
-    return "About Page!!!";
+    return view('about');
 });
 
 Route::get('/item/{id}', function ($id) {
