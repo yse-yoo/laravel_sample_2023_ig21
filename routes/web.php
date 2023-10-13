@@ -21,7 +21,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// ルーティング後は、コントローラーに任せる
 Route::get('/about', [HomeController::class, 'about']);
+Route::get('/search', [HomeController::class, 'search']);
 
 Route::get('/item/{id}', function ($id) {
     $message = "商品IDは{$id}";
@@ -41,18 +43,18 @@ Route::post('/hello', function () {
 });
 
 //Google検索みたいなルーティング
-Route::get('/search', function (Request $request) {
-    //dd($request);
-    // $keyword = $request->q;
-    // $message = "キーワードは{$keyword}です";
+// Route::get('/search', function (Request $request) {
+//     //dd($request);
+//     // $keyword = $request->q;
+//     // $message = "キーワードは{$keyword}です";
 
-    //連想配列データ
-    $data = [
-        'keyword' => $request->q
-    ];
-    // Viewファイルにデータを渡す
-    return view('search', $data);
-});
+//     //連想配列データ
+//     $data = [
+//         'keyword' => $request->q
+//     ];
+//     // Viewファイルにデータを渡す
+//     return view('search', $data);
+// });
 
 
 Route::get('/dashboard', function () {
