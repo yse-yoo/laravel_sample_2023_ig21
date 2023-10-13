@@ -35,9 +35,21 @@ class ItemController extends Controller
      */
     public function show(string $id)
     {
-        $message = "商品IDは{$id}";
+        // $items[1] = "コーヒー";
+        // $items[2] = "紅茶";
+        // $items[3] = "ほうじ茶";
+        $items = [
+            1 => 'コーヒー',
+            2 => '紅茶',
+            3 => 'ほうじ茶',
+        ];
+        if ($id > 0) $item = $items[$id];
+        // ビューに受け渡すデータ生成
+        $data = ['item' => $item];
+
         // reources/views/item/show.blade.php を表示
-        return view('item.show');
+        // データを受け渡す
+        return view('item.show', $data);
     }
 
     /**
