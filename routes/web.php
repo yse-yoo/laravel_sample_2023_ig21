@@ -32,25 +32,10 @@ Route::get('/item/{id}', [ItemController::class, 'show']);
 Route::get('/dp/{id}', [ItemController::class, 'show']);
 
 // URLから直接アクセスできない
-Route::post('/hello', function () {
-    $message = "こんにちは";
-    return $message;
-});
-
-//Google検索みたいなルーティング
-// Route::get('/search', function (Request $request) {
-//     //dd($request);
-//     // $keyword = $request->q;
-//     // $message = "キーワードは{$keyword}です";
-
-//     //連想配列データ
-//     $data = [
-//         'keyword' => $request->q
-//     ];
-//     // Viewファイルにデータを渡す
-//     return view('search', $data);
+// Route::post('/hello', function () {
+//     $message = "こんにちは";
+//     return $message;
 // });
-
 
 Route::get('/dashboard', function () {
     return view('dashboard');
