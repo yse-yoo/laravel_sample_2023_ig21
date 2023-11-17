@@ -27,7 +27,10 @@ class ItemController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //TODO: Requestからデータを取得
+        //TODO: データベースに保存
+        //TODO: リダイレクト
+        dd($request);
     }
 
     /**

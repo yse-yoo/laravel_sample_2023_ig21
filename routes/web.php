@@ -10,8 +10,8 @@ Route::get('/search', [HomeController::class, 'search'])->name('search');
 
 // ItemController
 Route::get('/item/', [ItemController::class, 'index'])->name('item.index');
+Route::post('/item/store', [ItemController::class, 'store'])->name('item.store');
 Route::get('/item/{id}', [ItemController::class, 'show'])->name('item.show');
-Route::get('/dp/{id}', [ItemController::class, 'show']);
 
 Route::get('/', function () {
     // resources/views/welcome.blade.php ビューが表示
