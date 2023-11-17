@@ -12,8 +12,13 @@ class ItemController extends Controller
      */
     public function index()
     {
+        // TODO: データをすべて取得
+        // SELECT * FROM items;
+        $items = Item::get();
+        $data['items'] = $items;
+
         // views/item/index.blade.php
-        return view('item.index');
+        return view('item.index', $data);
     }
 
     /**
