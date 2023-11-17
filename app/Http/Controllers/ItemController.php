@@ -11,7 +11,8 @@ class ItemController extends Controller
      */
     public function index()
     {
-        //
+        // views/item/index.blade.php
+        return view('item.index');
     }
 
     /**
@@ -19,7 +20,8 @@ class ItemController extends Controller
      */
     public function create()
     {
-        //
+        // views/item/create.blade.php
+        return view('item.create');
     }
 
     /**
