@@ -79,8 +79,9 @@ class ItemController extends Controller
         //商品IDから商品データを取得
         // SELECT * FROM items WHERE id = xx;
         $item = Item::find($id);
-        dd($item);
+        $data['item'] = $item;
         //編集画面を表示
+        return view('item.edit', $data);
     }
 
     /**
