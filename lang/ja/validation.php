@@ -80,7 +80,7 @@ return [
     'max' => [
         'array' => 'The :attribute field must not have more than :max items.',
         'file' => 'The :attribute field must not be greater than :max kilobytes.',
-        'numeric' => 'The :attribute field must not be greater than :max.',
+        'numeric' => ':attribute は :max 以下で入力してください',
         'string' => 'The :attribute field must not be greater than :max characters.',
     ],
     'max_digits' => 'The :attribute field must not have more than :max digits.',
@@ -89,7 +89,7 @@ return [
     'min' => [
         'array' => 'The :attribute field must have at least :min items.',
         'file' => 'The :attribute field must be at least :min kilobytes.',
-        'numeric' => 'The :attribute field must be at least :min.',
+        'numeric' => ':attribute の最小値は :min です。',
         'string' => 'The :attribute field must be at least :min characters.',
     ],
     'min_digits' => 'The :attribute field must have at least :min digits.',
@@ -115,7 +115,7 @@ return [
     'prohibited_unless' => 'The :attribute field is prohibited unless :other is in :values.',
     'prohibits' => 'The :attribute field prohibits :other from being present.',
     'regex' => 'The :attribute field format is invalid.',
-    'required' => 'The :attribute field is required.',
+    'required' => ':attribute を入力してください。',
     'required_array_keys' => 'The :attribute field must contain entries for: :values.',
     'required_if' => 'The :attribute field is required when :other is :value.',
     'required_if_accepted' => 'The :attribute field is required when :other is accepted.',
