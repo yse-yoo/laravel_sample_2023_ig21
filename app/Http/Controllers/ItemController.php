@@ -11,15 +11,17 @@ class ItemController extends Controller
 {
     public function index(Request $request)
     {
+        // Query Parameter から並び変えるカラムを取得
         $order_column = ($request->order_column) ? $request->order_column : 'id';
+        // Query Parameter から並び変える種類(ASC/DESC)取得
         $order_value = ($request->order_value) ? $request->order_value : 'asc';
         if ($item_name = $request->item_name) {
-            //SELECT * FROM items WHERE name LIKE '%xxxx%' ORDER BY XXX;
+            //SELECT * FROM items WHERE name LIKE '%xxxx%' ORDER BY XXX ASC/DESC;
             $items = Item::where('name', 'LIKE', "%{$item_name}%")
                 ->orderBy($order_column, $order_value)
                 ->get();
         } else {
-            //SELECT * FROM items;
+            //SELECT * FROM items ORDER BY xxxx ASC / DESC;
             $items = Item::orderBy($order_column, $order_value)->get();
         }
 
