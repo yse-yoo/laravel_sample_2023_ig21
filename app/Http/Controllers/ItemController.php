@@ -65,21 +65,10 @@ class ItemController extends Controller
         return view('item.edit', $data);
     }
 
-    public function update(Request $request, int $id)
+    public function update(ItemRequest $request, int $id)
     {
         $data = $request->all();
-        // dd($data);
-        // UPDATE items SET price = xxx WHERE id = xx;
-        // 1. Query Builder
-        // unset($data['_token']);
-        // Item::where('id', $id)->update($data);
-        // DB::table('items')->where('id', $id)->update($data);
-        // 2. Eloquent
-        // SELECT * FROM items WHERE id = xx;
-        // UPDATE items SET price = xxx WHERE id = xx;
         Item::find($id)->fill($data)->save();
-
-        //リダイレクト
         return redirect(route('item.edit', $id));
     }
 
