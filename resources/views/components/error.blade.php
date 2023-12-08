@@ -1,5 +1,7 @@
-<div class="text-red-500">
+<div class="p-5 text-red-500">
     <ul>
-        <li>Error1!</li>
+        @foreach($errors->all() as $error)
+        <li>{{ $error }}</li>
+        @endforeach
     </ul>
 </div>
