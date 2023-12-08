@@ -42,7 +42,10 @@ class ItemController extends Controller
         $data = $request->all();
         //データベースに保存
         // INSERT INTO items (name, price) VALUES (xxxx, xxxx);
+        // Eloquent
         Item::create($data);
+        // QueryBuilder
+        //DB::table('items')->create($data);
         //リダイレクト
         return redirect(route('item.index'));
     }
@@ -93,15 +96,14 @@ class ItemController extends Controller
         $data = $request->all();
         // dd($data);
         // UPDATE items SET price = xxx WHERE id = xx;
-        // 1.
+        // 1. Query Builder
         // unset($data['_token']);
         // Item::where('id', $id)->update($data);
-        //Query Builder
-        DB::table('items')->where('id', $id)->update($data);
-        // 2.
+        // DB::table('items')->where('id', $id)->update($data);
+        // 2. Eloquent
         // SELECT * FROM items WHERE id = xx;
         // UPDATE items SET price = xxx WHERE id = xx;
-        // Item::find($id)->fill($data)->save();
+        Item::find($id)->fill($data)->save();
 
         //リダイレクト
         return redirect(route('item.edit', $id));
