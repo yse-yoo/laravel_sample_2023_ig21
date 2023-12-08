@@ -9,9 +9,6 @@ use Illuminate\Support\Facades\DB;
 
 class ItemController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         // TODO: データをすべて取得
@@ -23,18 +20,12 @@ class ItemController extends Controller
         return view('item.index', $data);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         // views/item/create.blade.php
         return view('item.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(ItemRequest $request)
     {
         $data = $request->all();
@@ -42,9 +33,6 @@ class ItemController extends Controller
         return redirect(route('item.index'));
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(int $id)
     {
         // $items[1] = "コーヒー";
@@ -67,9 +55,6 @@ class ItemController extends Controller
         return view('item.show', $data);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(int $id)
     {
         //商品IDから商品データを取得
@@ -80,9 +65,6 @@ class ItemController extends Controller
         return view('item.edit', $data);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, int $id)
     {
         $data = $request->all();
@@ -101,9 +83,6 @@ class ItemController extends Controller
         return redirect(route('item.edit', $id));
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(int $id)
     {
         // DELETE FROM items WHERE id = xx;
