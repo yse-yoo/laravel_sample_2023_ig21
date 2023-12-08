@@ -13,9 +13,6 @@
                 </form>
             </div>
 
-            <p>
-                {{ request('order_column')}}
-            </p>
             <div class="m-5">
                 <a href="{{ route('item.create') }}" class="bg-white text-blue-500 border py-2 px-4 rounded">{{ __('messages.new') }}</a>
             </div>
